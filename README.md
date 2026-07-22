@@ -1,8 +1,8 @@
 # Tansoku
 
-Bootloader thingy for exynos990 devices
+Bootloader patcher and LK payload injector for exynos990 devices.
 
 ## TODO
 
 * [x] Patching the bootchain
-* LK Payloads
+* [x] LK Payloads
