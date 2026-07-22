@@ -1,3 +1,6 @@
 [submodule "tonasket"]
 	path = tonasket
 	url = https://github.com/halal-beef/tonasket
+[submodule "tansoku-lk"]
+	path = tansoku-lk
+	url = https://github.com/halal-beef/tansoku-lk
