@@ -4,12 +4,14 @@
 import os
 import sys
 
-from modules.logger import *
-
 _TONASKET_DIR = os.path.join(os.path.dirname(__file__), "..", "tonasket")
 sys.path.insert(0, os.path.abspath(_TONASKET_DIR))
 
 from tonasket.sign_tool import *
+
+from modules.logger import *
+
+from modules.model_id_map import MODEL_ID_MAP
 
 import modules.shared_env
 
@@ -66,6 +68,7 @@ def post_process_fwbl1(file):
     ree_key = file[0x3000 - BL1_FOOTER_OFFSET + 616:0x3000 - BL1_FOOTER_OFFSET + 1140]
 
     model_id = int.from_bytes(file[0x3000 - BL1_FOOTER_OFFSET + 1268:0x3000 - BL1_FOOTER_OFFSET + 1272], "little")
+    modules.shared_env.selected_model = MODEL_ID_MAP.get(model_id, {"model": "Unknown", "name": "Unknown"})
 
     log(LogLevel.SUCCESS, "Extracted signer info!")
     print()

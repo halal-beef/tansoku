@@ -85,7 +85,7 @@ def main():
             print()
             continue
 
-        log(LogLevel.INFO, f"Processing {image}...")
+        log(LogLevel.INFO, f"Starting operations on {image}...")
 
         log(LogLevel.INFO, f"Getting {image} area from sboot.bin...")
         target_area = sboot_data[params[START]:params[END]] 
